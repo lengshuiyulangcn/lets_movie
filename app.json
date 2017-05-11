@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/movies/movie", 
+    "pages/index/index",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "约电影",
+    "navigationBarTextStyle":"black"
+  },
+   "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/movies/movie",
+      "iconPath": "images/movie.png",
+      "selectedIconPath": "images/movie.png",
+      "text": "近期的电影"
+    }, {
+      "pagePath": "pages/me/me",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me.png",
+      "text": "我"
+    }]
+  }
+}
