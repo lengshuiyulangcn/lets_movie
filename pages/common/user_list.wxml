@@ -1,0 +1,31 @@
+<template name="user_card">
+  <view class="user_list">
+    <view class="user_image">
+      <image class="avatar" src="{{item.avatar_url}}"/>
+    </view>
+     <view class="user_detail">
+	<view class="user_name">
+          <text class="name">{{item.nick_name}}</text>
+          <block wx:if="{{item.gender == 'male'}}">
+             <image class="gender" src="../../images/male.png"/>
+          </block>
+          <block wx:if="{{item.gender == 'female'}}">
+             <image class="gender" src="../../images/female.png"/>
+          </block>
+          <text class="distance">1KM</text>
+        </view>
+	<view class="weui-media-box__desc user_movie">
+          <text class="movie_name">#有你的小镇</text>
+          <text class="movie_name">#柯南剧场版</text>
+          <text class="movie_name">#柯南剧场版</text>
+	</view>
+	<view class="weui-media-box__desc user_meta">
+            想去看大海,想去看你，想去有你的小镇。
+            想去看大海,想去看你，想去有你的小镇。
+            想去看大海,想去看你，想去有你的小镇。
+            想去看大海,想去看你，想去有你的小镇。
+            想去看大海,想去看你，想去有你的小镇。
+	</view>
+     </view>
+  </view>
+</template>

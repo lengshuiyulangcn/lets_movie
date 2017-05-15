@@ -1,3 +1,4 @@
+<import src="../common/movie_list"/>
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">
@@ -10,7 +11,9 @@
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
             <view class="weui-tab__panel">
-                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">选项一的内容</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                     <template is="movie_list" data="{{movies}}"/>
+                </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
             </view>
         </view>

@@ -3,6 +3,8 @@
     "pages/movies/movie", 
     "pages/index/index",
     "pages/me/me",
+    "pages/match/match",
+    "pages/movie_detail/movie_detail",
     "pages/logs/logs"
   ],
   "window":{
@@ -21,6 +23,11 @@
       "iconPath": "images/movie.png",
       "selectedIconPath": "images/movie.png",
       "text": "近期的电影"
+    }, {
+      "pagePath": "pages/match/match",
+      "iconPath": "images/match.png",
+      "selectedIconPath": "images/match.png",
+      "text": "想去"
     }, {
       "pagePath": "pages/me/me",
       "iconPath": "images/me.png",

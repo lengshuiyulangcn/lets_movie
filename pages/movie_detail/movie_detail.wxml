@@ -1,0 +1,5 @@
+<import src="../common/movie_detail" />
+<view class="page">
+  <template is="movie_item"  data="{{movie}}" />
+  <button class="weui-btn" type="primary">想要去看!</button>
+</view>
