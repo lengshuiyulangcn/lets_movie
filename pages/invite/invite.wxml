@@ -1,0 +1,17 @@
+<import src="../common/movie_detail" />
+<view class="card">
+  <view>
+   <image src="{{user.avatar_url}}" class="avatar"/>
+    <text class="user_name">{{user.nick_name}}</text>
+  </view>
+  <view class="invite_text">
+    <text>想找人一起看</text>
+  </view>
+     <template is="movie_item_short"  data="{{movie}}" />
+  <view>
+  </view>
+</view>
+<view class="button">
+   <button class="mini-btn btn-left" type="warn" size="mini">不去!</button>
+   <button class="mini-btn btn-right" type="primary" size="mini">好呀!</button>
+</view>

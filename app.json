@@ -4,6 +4,8 @@
     "pages/index/index",
     "pages/me/me",
     "pages/match/match",
+    "pages/invite/invite",
+    "pages/date/edit",
     "pages/movie_detail/movie_detail",
     "pages/logs/logs"
   ],
@@ -29,7 +31,7 @@
       "selectedIconPath": "images/match.png",
       "text": "想去"
     }, {
-      "pagePath": "pages/me/me",
+      "pagePath": "pages/invite/invite",
       "iconPath": "images/me.png",
       "selectedIconPath": "images/me.png",
       "text": "我"

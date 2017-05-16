@@ -50,5 +50,18 @@ Page({
   },
   onLoad: function (params) {
     console.log(params.id);
-  }
+  },
+  edit_date: function(e) {
+     wx.navigateTo({
+        url: '../date/edit',
+         success: function(res){
+	  console.log(res);
+        },
+	 fail: function(err) {
+	  console.log(err);
+	},
+	complete: function() {
+	}
+     })
+   }
 })

@@ -16,3 +16,15 @@
     </scroll-view>
   </view>
 </template>
+<template name="movie_item_short">
+  <view class="page">
+    <scroll-view scroll-y="true" wx:if="{{ movie.title }}">
+      <view class="meta">
+        <image class="poster" src="{{ movie.images.large }}" mode="aspectFit"/>
+        <text class="title">{{ movie.title }}</text>
+        <text class="info">导演：<block wx:for="{{ movie.directors }}" wx:key="{{ item.id }}"> {{ item.name }} </block></text>
+        <text class="info">主演：<block wx:for="{{ movie.casts }}" wx:key="{{ item.id }}"> {{ item.name }} </block></text>
+      </view>
+    </scroll-view>
+  </view>
+</template>
