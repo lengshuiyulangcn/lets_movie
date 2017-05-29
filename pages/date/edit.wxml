@@ -1,6 +1,61 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="page">
+  <view class="date_body">
+   <view class="weui-cells__title">电影名称</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+	<view class="weui-cell__hd">
+	    <image src="{{movie.image_small}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+	</view>
+	<view class="weui-cell__bd">{{movie.title}}</view>
+       </view>
+     </view> 
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">微信ID</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input" bindinput="wechatInput" placeholder="输入微信ID"/>
+          </view>
+        </view> 
+ 	<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date_date}}" start="2015-09-01" end="2017-09-01" bindchange="dateInput">
+                        <view class="weui-input">{{date_date}}</view>
+                    </picker>
+                </view>
+        </view>
+	<view class="weui-cell weui-cell_input">
+	    <view class="weui-cell__hd">
+		<view class="weui-label">时间</view>
+	    </view>
+	    <view class="weui-cell__bd">
+		<picker mode="time" value="{{date_time}}" start="09:01" end="21:01" bindchange="timeInput">
+		    <view class="weui-input">{{date_time}}</view>
+		</picker>
+	    </view>
+	</view>
+ 	<view class="weui-cells__title">地点</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="locationInput" placeholder="去哪儿看" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">备注</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput="memoInput" placeholder="其他废话" style="height: 3.3em" />
+                </view>
+            </view>
+        </view>
+
+  </view> 
+  <button class="weui-btn foot-btn" type="primary" bindtap="inviteHer">提交</button>
 </view>

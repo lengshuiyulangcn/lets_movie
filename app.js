@@ -6,22 +6,33 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
+  user_token: function(){
+   return wx.getStorageSync('access_token');
+  },
   getUserInfo:function(cb){
     var that = this
-    if(this.globalData.userInfo){
+    if(that.user_token != "" && this.globalData.userInfo){
       typeof cb == "function" && cb(this.globalData.userInfo)
     }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
+        wx.login({
+        success: function (res) {
+	  wx.getUserInfo({
+	    success: function(resp) {
+            that.globalData.userInfo = resp.userInfo;
+              wx.request({
+                url: 'http://localhost:3000/user_token',
+                data: {
+                  code: res.code,
+                  user_info: that.globalData.userInfo
+                },
+                method: "POST",
+                success: function(res) {
+                    wx.setStorageSync('access_token', res.data["jwt"]);
+                cb(this.globalData.userInfo);
+                }
+              })
+            }})
+        }});
     }
   },
   globalData:{

@@ -11,7 +11,10 @@
   <view>
   </view>
 </view>
-<view class="button">
+<view class="button" wx:if="{{inviter.id != user.id }}">
    <button class="mini-btn btn-left" type="warn" size="mini">不去!</button>
    <button class="mini-btn btn-right" type="primary" size="mini">好呀!</button>
+</view>
+<view class="button" wx:if="{{inviter.id == user.id }}">
+  <button class="weui-btn" type="primary">点击右上角分享！</button>
 </view>
